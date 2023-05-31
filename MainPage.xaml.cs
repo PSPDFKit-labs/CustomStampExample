@@ -19,6 +19,7 @@ using PSPDFKit.UI;
 using System.Threading.Tasks;
 
 using PSPDFKit.UI.ToolbarComponents;
+using PSPDFKit.Pdf.Annotation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -47,6 +48,7 @@ namespace CustomStampExample
 
         private async void PdfView_InitializationCompletedHandlerAsync(PdfView sender, Document args)
         {
+            await sender.Controller.SetViewStateAsync(new ViewState { AppearanceStreamTypes = new[] { AnnotationType.Note } });
             await sender.Controller.SetKeepSelectedToolAsync(true);
         }
 
