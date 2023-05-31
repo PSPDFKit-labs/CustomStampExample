@@ -40,9 +40,14 @@ namespace CustomStampExample
             {
                 // Now that the `PdfView` is ready, enable the button for opening a file.
                 Button_OpenPDF.IsEnabled = true;
-            };
 
-            
+                
+            };
+        }
+
+        private async void PdfView_InitializationCompletedHandlerAsync(PdfView sender, Document args)
+        {
+            await sender.Controller.SetKeepSelectedToolAsync(true);
         }
 
         private async void Button_OpenPDF_Click(object sender, RoutedEventArgs e)

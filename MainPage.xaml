@@ -14,7 +14,10 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="52"/>
         </Grid.RowDefinitions>
-        <ui:PdfView Grid.Row="0" Name="PdfView" />
+        <ui:PdfView 
+            Grid.Row="0" 
+            Name="PdfView" 
+            InitializationCompletedHandler="PdfView_InitializationCompletedHandlerAsync" />
         <Button IsEnabled="False" Content="Open PDF" HorizontalAlignment="Left" Margin="10" Grid.Row="1" Name="Button_OpenPDF" Click="Button_OpenPDF_Click"/>
     </Grid>
 </Page>
